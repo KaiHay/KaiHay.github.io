@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls';
+import imagep from '/public/gram.jpg';
 //CAMERA AND SCENE
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
@@ -30,7 +31,7 @@ scene.add(lightHelper, lightHelper2, lightHelper3);
 
 //background
 const loader= new THREE.TextureLoader();
-loader.load('../gram.jpg', function(texture){
+loader.load(imagep, function(texture){
 texture.mapping=THREE.EquirectangularReflectionMapping;
 scene.background=texture;
 scene.environment=texture;
